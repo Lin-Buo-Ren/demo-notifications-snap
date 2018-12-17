@@ -6,11 +6,13 @@ description: |
 
 grade: stable
 confinement: strict
+icon: snap/gui/example-application-logo.png
 
 apps:
   demo-notifications:
     command: >
       usr/bin/notify-send
+      --icon="${SNAP}"/meta/gui/example-application-logo.png
       'Hello from a snap!'
       'This is the message body of the notification.'
  
