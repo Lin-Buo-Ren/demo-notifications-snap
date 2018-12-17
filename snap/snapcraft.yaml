@@ -1,0 +1,25 @@
+name: demo-notifications
+version: current
+summary: Demonstration of notification sending in snaps
+description: |
+  This snap demonstrates how to send notifications in snaps.
+
+grade: stable
+confinement: strict
+
+apps:
+  demo-notifications:
+    command: >
+      usr/bin/notify-send
+      'Hello from a snap!'
+      'This is the message body of the notification.'
+ 
+plugs:
+  desktop:
+
+parts:
+  dependencies:
+    source: snap/local/empty
+    plugin: nil
+    stage-packages:
+    - libnotify-bin
